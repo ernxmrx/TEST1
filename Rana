@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+                build quietPeriod: 2, job: 'Rana2'
+                build quietPeriod: 2, job: 'Rana1'
+                build quietPeriod: 2, job: 'Rana3'
+            }
+        }
+    }
+}
